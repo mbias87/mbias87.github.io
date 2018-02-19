@@ -1,0 +1,160 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/neon-animation/neon-animation.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../../bower_components/neon-animation/animations/slide-down-animation.html">
+
+<dom-module id="resume-app">
+  <template>
+    <style>
+        :host {         
+               background-color:green;
+        }
+        #parent{
+          position:relative;
+        }    
+        #myButton{
+          border: 3px solid black;                       
+          text-align:center;         
+          width:300px; 
+          position:absolute;
+          top:50px;
+          left:50%;          
+          transform:translate(-50%,150%);         
+          margin: 0 auto;       
+          background-color:white;  
+        }
+        #buttonTitle{
+          position:absolute;
+          top:58px;
+          left:50%;          
+          transform:translate(-50%,1200%);         
+          margin: 0 auto;  
+          font-family:sans-serif;
+          font-weight:light;
+          font-size:23px;
+        }     
+         
+      </style> 
+      <neon-animated-pages id="pages" class="flex" selected="[[selected]]" entry-animation="slide-from-right-animation" exit-animation="slide-left-animation">
+         <neon-animatable> 
+           <div id="parent">
+              <paper-button id="myButton" on-tap="switch">
+                <h1 style="font-family:sans-serif;font-weight:normal;padding:10px;">MICHAEL BIAS</h1>    
+              </paper-button>
+              <div id="buttonTitle">Software Engineer </div>
+            </div>          
+        </neon-animatable>
+          <neon-animatable>
+            <paper-button on-tap="switch" id="myButton" style=" top:-450px;width:auto;overflow-x:auto; ">
+          <div id="containerDiv">
+            <!--<div style="float:left;text-align:center;"> Michael Bias </div> -->
+              <div style="float:right;font-size:14px;text-transform:none;">
+                <img src="mike.jpg">
+                <p style="text-transform:none;">Experienced Military Veteran offering 5.5+ years of experience in United States Air Force. 
+                  Offering strong foundation in software engineering and programming principles across multiple platforms. 
+                  Experienced in object-oriented programming; developing, testing and debugging code; designing interfaces; and administering systems and networks. 
+                Quickly learn and master new technologies; successful working in both team and self-directed settings. </p>
+                 </div> 
+              </div>
+              </paper-button>
+          </neon-animatable>
+           <neon-animatable style="background-color:red;">
+          <paper-button id="myButto" on-tap="switch" style="width:auto;height:auto;border:3px solid black;margin:0 auto;top:90px;left:32%;">
+                <h1 style="font-family:sans-serif;font-weight:normal;padding:10px;">Technologies used</h1> 
+                   <ul>
+                     <li>Java</li>
+                     <li>C++</li>
+                     <li>JavaScript</li>                      
+                     <li>HTML</li>
+                     <li>CSS</li>
+                     <li>Angular</li>       
+                     <li>Polymer</li>
+                     <li>SQL</li>
+                   </ul> 
+              </paper-button> 
+        </neon-animatable> 
+        <neon-animatable style="background-color:red;">
+          <paper-button id="myButton" on-tap="switch">
+                <h1 style="font-family:sans-serif;font-weight:normal;padding:10px;">Recent Work</h1>
+                UNDER CONSTRUCTION!
+              </paper-button>   
+        </neon-animatable>
+        <neon-animatable style="background-color:yellow;">
+          <paper-button id="myButton" on-tap="switch" style="width:auto; height:auto;display:block;top:-900px;">
+                <h1 style="font-family:sans-serif;font-weight:normal;padding:10px;">Places I've Worked</h1>    
+                 <div style="text-transform:none;">  
+              <p> Junior Software Engineer - DSS Inc <br>
+                June 2016 - Present <br>                 
+                  Contributed to design and development to Consult Tracking Manager Web Application using Google Polymer, HTML 
+                  Debugged and modified software components 
+                  Utilized Agile Development Software methods 
+                  Contribued to design and development of DSS style guide using Angular JS 
+                  Developed code fixes and enhancements for inclusion in future code released and patches                   
+              </p>
+              <p>
+                IT Intern - Catmedia<br>
+                June 2015 - August 2015<br>
+                Research and Implement current trends in Web Design and Development 
+                Provide Technical support
+                Support Web-server management
+                Assist IT Administrator with creation of policies streamlining daily IT Operations
+                Install and configure computers, telephones , and other technology for new or existing employees
+              </p>
+              <p> Junior Web Developer - Accelerated Design<br>    
+                  May 2014 - October 2014<br>
+                Installation and configuration of Drupal Core with Contributed Modules.
+                Contributed to development of custom Drupal module
+                Module for Jewelry By Couture website, provided Drag and Drop Functionality
+                Technologies used: Drupal, Postgresql, PHP              
+              </p>
+              <p>
+                United States Airforce Accounting Technician<br>
+                May 2009- May 2014<br>
+                Used Microsoft Excel to streamline the process of maintaining accountability for 1,000+ documents related to tuition payments
+                Computed 223 separation/retirement cases ensuring payments were made to members within 2 business days which eased their transition to civilian life
+                Processed $141K in emergency/special payments which eliminated financial hardship to payment recipients
+                Collaborated with Force Support Squadron on joint pay issues; resolved 3.5K cases in 10 day average
+                Lead cashier, responsible for $1M; maintained 100% accountability 
+              </p>
+              </div>
+              </paper-button>             
+        </neon-animatable>
+        <neon-animatable style="background-color:black;">
+          <paper-button id="myButton" on-tap="switch" style="display:block;width:auto;height:auto;">
+                <h1 style="font-family:sans-serif;font-weight:normal;padding:10px;text-transform:none;">Contact Me</h1>    
+                <div> 
+                  <paper-icon-button icon="communication:email"> </paper-icon-button> mbias87@gmail.com
+
+                </div>
+              </paper-button>
+        </neon-animatable>
+      </neon-animated-pages>
+ 
+  </template>
+
+  <script>
+    Polymer({ 
+      is: 'resume-app',
+      behaviors:[Polymer.NeonAnimationRunnerBehavior],
+      properties: { 
+        selected: {
+          type:String,
+          value:0
+        },        
+      
+      },
+      switch:function(){
+       if(this.selected !== 4){
+         this.selected++;
+       }else{
+         this.selected = 0;
+       }
+        
+        console.log('oranges ran');
+      }, 
+    });
+  </script>
+</dom-module>
